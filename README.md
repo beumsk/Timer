@@ -1,2 +1,5 @@
 # Timer
- A timer design as a Pomodoro clock. Project built during freecodecamp certification.
+ Start a countdown with this Pomodoro clock timer. Project built during freecodecamp certification.
+ 
+ TODO:
+ * review design
