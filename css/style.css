@@ -32,27 +32,36 @@ section {
 
 #clock {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  background: rgba(255, 193, 7, .9);
-  width: 200px;
-  height: 200px;
+  background: rgba(0, 0, 0, .4);
   margin: auto;
-  border-radius: 50%;
-  font-size: 42px;
+  padding: 20px;
 }
 @media only screen and (min-width: 768px) {
   #clock {
-    width: 300px;
-    height: 300px;
-    font-size: 54px;
+    flex-direction: row;
+    padding: 40px;
+  }
+}
+
+#clock form {
+  margin-bottom: 20px;
+  display: flex;
+}
+@media only screen and (min-width: 768px) {
+  #clock form {
+    margin-right: 20px;
+    margin-bottom: 0;
   }
 }
 
 #clock input {
   display: inline-block;
-  padding-left: 5px;
+  padding-left: 10px;
   width: 70px;
+  text-align: right;
   font-size: 42px;
   background: transparent;
   color: whitesmoke;
@@ -62,35 +71,56 @@ section {
 }
 @media only screen and (min-width: 768px) {
   #clock input {
-    font-size: 54px;
-    width: 80px;
+    font-size: 84px;
+    width: 120px;
   }
 }
-#clock input:focus, #clock input:hover {
+#clock input:focus:not([disabled]), 
+#clock input:hover:not([disabled]) {
   background: rgba(0, 0, 0, .2);
 }
-
-#min {
-/*   text-align: right; */
+#clock form span {
+  font-size: 42px;
 }
-
+@media only screen and (min-width: 768px) {
+  #clock form span {
+    font-size: 84px;
+  }
+}
 
 #controls {
-  padding: 40px 10px;
+  display: flex;
+}
+@media only screen and (min-width: 768px) {
+  #controls {
+    flex-direction: column;
+    margin-left: 20px;
+    font-size: 20px;
+  }
 }
 
-#controls span{
-  color: rgba(255, 193, 7, .9);
+#controls button {
+  -webkit-appearance: button;
+  font-size: inherit;
+  color: white;
   background: transparent;
-  border: solid 2px rgba(255, 193, 7, .9);
+  border: solid 2px white;
   padding: 10px;
-  transition: background .8s ease, color .8s ease;
+  width: 100px;
+  transition: background .4s ease, color .4s ease;
   border-radius: 2px;
+  margin: 0 5px;
 }
-#controls span:hover {
+@media only screen and (min-width: 768px) {
+  #controls button {
+    margin: 10px 0;
+  }
+}
+#controls button:hover,
+#controls button:focus {
   cursor: pointer;
-  background: rgba(255, 193, 7, .9);
-  color: #f5f5f5;
+  background: white;
+  color: black;
 }
 
 footer {
@@ -99,10 +129,11 @@ footer {
 }
 
 a {
-  color: #FFC107;
+  color: lightgray;
   text-decoration: none;
 }
-a:hover {
+a:hover,
+a:focus {
   color: whitesmoke;
   text-decoration: underline;
 }
